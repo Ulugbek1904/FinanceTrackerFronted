@@ -1,0 +1,29 @@
+<div class="login-container">
+    <img src="assets\images\logo2.png" alt="Logo" class="logo" />
+    <h2>Hisobga kirish</h2>
+
+    <div class="form-group">
+      <form (ngSubmit)="onSubmit()" [formGroup]="loginForm">
+        <div>
+          <input 
+            id="email" 
+            formControlName="email" 
+            type="email" 
+            placeholder="email" required
+          />
+        </div>
+    
+        <div>
+          <input id="password" placeholder="password" formControlName="password" type="password" required />
+        </div>
+    
+        <button type="submit" [disabled]="loginForm.invalid">Sign In</button>
+      </form>
+    </div>  
+
+  
+    <p>
+      <a routerLink="/forgot-password">Forgot password?</a>
+      <a routerLink="/sign-up">Sign up</a>
+    </p>
+  </div>

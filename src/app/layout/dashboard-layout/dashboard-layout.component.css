@@ -1,0 +1,44 @@
+/* dashboard-layout.component.css */
+.dashboard-layout {
+    padding: 20px;
+    transition: background-color 0.3s, color 0.3s;
+  }
+  
+  /* Light mode uchun standart stil */
+  :host {
+    display: block;
+    background-color: #ffffff;
+    color: #1c0560;
+    min-height: 100vh;
+  }
+  
+  :host-context(body.dark-mode) .dashboard-layout {
+    background-color: #09011d;
+    color: #ffffff;
+  }
+  
+  /* Tugmalar uchun stil */
+  button {
+    margin-right: 10px;
+    padding: 8px 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  :host-context(body.dark-mode) button {
+    background-color: #333;
+    color: #fff;
+    border: 1px solid #555;
+  }
+
+  button {
+    background-color: #f0f0f0;
+    color: #333;
+    border: 1px solid #ddd;
+  }
+  
+  body.dark-mode {
+    background-color: #121f47;
+    color: #ffffff;
+  }
