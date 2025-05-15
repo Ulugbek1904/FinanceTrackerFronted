@@ -5,6 +5,7 @@ import { Router, RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { AuthService } from '../../services/authService/auth.service';
 import { JwtHelperService } from '@auth0/angular-jwt';
+import { CardModule } from 'primeng/card'; 
 
 @Component({
   selector: 'app-login',
@@ -14,7 +15,7 @@ import { JwtHelperService } from '@auth0/angular-jwt';
   imports: [
     CommonModule,
     RouterModule,
-    ReactiveFormsModule 
+    ReactiveFormsModule, CardModule
   ]
 })
 export class LoginComponent {

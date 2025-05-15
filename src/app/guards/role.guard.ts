@@ -1,6 +1,6 @@
 import { CanActivateFn, Router } from '@angular/router';
 import { inject } from '@angular/core';
-import {jwtDecode} from 'jwt-decode';
+import { jwtDecode } from 'jwt-decode';
 
 export const roleGuard: CanActivateFn = (route, state) => {
   const router = inject(Router);
@@ -15,7 +15,7 @@ export const roleGuard: CanActivateFn = (route, state) => {
     const decoded: any = jwtDecode(token);
     console.log("decoded JWT:", decoded);
 
-    const userRole = decoded["http://schemas.microsoft.com/ws/2008/06/identity/claims/role"];
+    const userRole = decoded.role;
     const allowedRoles = route.data['roles'] as string[];
     console.log("User Role:", userRole);
     console.log("Allowed Roles:", allowedRoles);

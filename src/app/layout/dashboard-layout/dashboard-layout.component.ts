@@ -1,12 +1,12 @@
 // dashboard-layout.component.ts
 import { CommonModule } from '@angular/common';
 import { Component, OnInit, Renderer2 } from '@angular/core';
-import { Router } from '@angular/router';
+import { Router, RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'app-dashboard-layout',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, RouterOutlet],
   templateUrl: './dashboard-layout.component.html',
   styleUrls: ['./dashboard-layout.component.css']  // styleUrl emas, styleUrls bo'lishi kerak
 })
@@ -17,7 +17,6 @@ export class DashboardLayoutComponent implements OnInit {
   constructor(private router: Router, private renderer: Renderer2) {}
 
   ngOnInit(): void {
-    // Saqlangan dark mode holatini tekshiramiz
     const savedMode = localStorage.getItem('isDarkMode');
     this.isDarkMode = savedMode === 'true';
     this.applyTheme();
@@ -37,7 +36,6 @@ export class DashboardLayoutComponent implements OnInit {
       this.renderer.removeClass(body, 'dark-mode');
     }
     
-    // Ko'proq aniqlik uchun buni qo'shishingiz mumkin
     console.log('Dark mode:', this.isDarkMode);
     console.log('Body classes:', body.className);
   }

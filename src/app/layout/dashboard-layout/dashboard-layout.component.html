@@ -1,25 +1,39 @@
-<!-- dashboard-layout.component.html -->
-<div class="dashboard-layout">
-  <header class="dashboard-header">
-    <h1>Dashboard</h1>
-    
-    <div class="controls">
-      <button (click)="toggleDarkMode()" class="theme-toggle">
-        {{ isDarkMode ? 'Light Mode' : 'Dark Mode' }}
-      </button>
-      
-      <button (click)="logout()" class="logout-btn">Logout</button>
-    </div>
-  </header>
+<div class="dashboard-container">
+  <!-- Sidebars -->
+  <aside class="left-sidebar">
+    <div class="brand">Finance<br>Tracker.</div>
 
-  <div class="dashboard-content">
-    <p *ngIf="userRole === 'SuperAdmin'">SuperAdmin Dashboard</p>
-    <p *ngIf="userRole === 'Admin'">Admin Dashboard</p>
-    <p *ngIf="userRole === 'User'">User Dashboard</p>
-    
-    <!-- Bosh panel contentni bu yerga qo'shing -->
-    <div class="content-panel">
-      <p>Xush kelibsiz! Bu yerda dashboard mazmunini ko'rishingiz mumkin.</p>
+    <nav class="nav-links">
+      <a routerLink="/dashboard" routerLinkActive="active">
+        <span class="icon">🏠</span> 
+      </a>
+      <a routerLink="/dashboard/accounts" routerLinkActive="active">
+        <span class="icon">🏦</span> 
+      </a>
+      <a routerLink="/dashboard/budgets" routerLinkActive="active">
+        <span class="icon">💰</span> 
+      </a>
+      <a routerLink="/dashboard/settings" routerLinkActive="active">
+        <span class="icon">⚙️</span> 
+      </a>
+    </nav>
+
+    <div class="sidebar-bottom">
+      <img src="assets/profile.jpg" alt="Profil rasmi" class="profile-img" />
+      <div class="dark-mode-toggle">
+        <button onclick="toggleDarkMode()" class="light">
+          🌙
+        </button>
+        <button onclick="toggleDarkMode()" class="dark">
+          🌞
+        </button>
+      </div>
+      
     </div>
-  </div>
+  </aside>
+
+  <!-- Main Content Area -->
+  <main class="main-content">
+    <router-outlet></router-outlet>
+  </main>
 </div>

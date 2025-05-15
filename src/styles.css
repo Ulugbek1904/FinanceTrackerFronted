@@ -1,8 +1,9 @@
-/* You can add global styles to this file, and also import other style files */
+@import "primeicons/primeicons.css";
+
 
 html, body { height: 100%; }
 body {
-    margin: 0;
+    padding: 30px 30px 0 30px;
     font-family: Arial, sans-serif;
-    transition: background-color 0.3s, color 0.3s;
+    background-color: rgb(21, 20, 20);
   }

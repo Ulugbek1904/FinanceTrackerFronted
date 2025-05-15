@@ -1,44 +1,109 @@
-/* dashboard-layout.component.css */
-.dashboard-layout {
-    padding: 20px;
-    transition: background-color 0.3s, color 0.3s;
-  }
-  
-  /* Light mode uchun standart stil */
-  :host {
-    display: block;
-    background-color: #ffffff;
-    color: #1c0560;
-    min-height: 100vh;
-  }
-  
-  :host-context(body.dark-mode) .dashboard-layout {
-    background-color: #09011d;
-    color: #ffffff;
-  }
-  
-  /* Tugmalar uchun stil */
-  button {
-    margin-right: 10px;
-    padding: 8px 16px;
-    border-radius: 4px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-  }
-  
-  :host-context(body.dark-mode) button {
-    background-color: #333;
-    color: #fff;
-    border: 1px solid #555;
-  }
+.dashboard-container {
+  display: flex;
+  min-height: 90vh;
+  border: 5px solid red;
+}
 
-  button {
-    background-color: #f0f0f0;
-    color: #333;
-    border: 1px solid #ddd;
-  }
-  
-  body.dark-mode {
-    background-color: #121f47;
-    color: #ffffff;
-  }
+.left-sidebar {
+  margin-left: 30px;
+  margin-top: 30px;
+  width: 100px;
+  background-color: rgba(200, 200, 200, .6); 
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  border-radius: 8px 0 0 0;
+}
+
+.brand {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 25px;
+  margin-top: 20px;
+}
+
+.nav-links {
+  margin-top: 50px;
+  margin-bottom: 75px;
+}
+.nav-links a {
+  width: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 30px 0;
+  color: white;
+  text-decoration: none;
+  font-size: 16px;
+  border: 1px solid yellow;
+}
+
+.nav-links a.active {
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+.icon {
+  margin-left: 5px;
+  width: 100%;
+  font-size: larger;
+}
+
+.sidebar-bottom {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.profile-img {
+  border: 1px solid green;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  margin-bottom: 10px;
+}
+
+.dark-mode-toggle {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 36px;
+  height: 68px;
+  border-width: 1px;
+  border-style: solid;
+  border-color: rgb(232, 232, 232);
+  border-radius: 76px;
+  padding: 4px;
+}
+
+.dark-mode-toggle button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 12px; 
+  color: inherit; 
+}
+
+.dark-mode-toggle .light {
+  border: 1px solid green;
+  border-radius: 50%;
+  padding: 5px;
+}
+
+.dark-mode-toggle .dark {
+  border: 1px solid yellow;
+  border-radius: 50%;
+  padding: 5px;
+}
+
+.main-content {
+  margin-left: 250px; 
+  padding: 20px;
+  width: calc(100% - 250px);
+}
